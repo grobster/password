@@ -7,6 +7,10 @@ public class Password {
 	public static final char[] NUMBERS = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
 	public static final char[][] ALL_CHARS = {LOWER_LETTERS, NUMBERS};
 	
+	public Password(int passwordLength) {
+		this.passwordLength = passwordLength;
+	}
+	
 	
 	public String createPassword() {
 		StringBuilder createdPassword = new StringBuilder();

@@ -3,12 +3,12 @@ package com.grobster.password;
 public class PasswordTestDrive {
 	public static void main(String[] args) {
 		
-		AbstractPassword password2 = new AllCharactersPassword(new Password(8));
-		password2.setPasswordLength(4);
+		AbstractPassword password3 = new PlmCharactersPassword(new AllCharactersPassword(new Password(8)));
+		password3.setPasswordLength(8);
 		
-		password2.createPassword();
+		password3.createPassword();
 		
-		System.out.println(password2.getPassword());
+		System.out.println(password3.getPassword());
 		
 	}
 	

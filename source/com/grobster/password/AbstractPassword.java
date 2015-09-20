@@ -36,4 +36,20 @@ public abstract class AbstractPassword {
 		this.password = password;
 	}
 	
+	public static void setLowerLetters(char[] lowerLetters) {
+		LOWER_LETTERS = lowerLetters;
+	}
+	
+	public static void setUpperLetters(char[] upperLetters) {
+		UPPER_LETTERS = upperLetters;
+	}
+	
+	public static void setNumbers(char[] numbers) {
+		NUMBERS = numbers;
+	}
+	
+	public static void setSpecial(char[] special) {
+		SPECIAL = special;
+	}
+	
 }

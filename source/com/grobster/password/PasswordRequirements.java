@@ -3,6 +3,8 @@ package com.grobster.password;
 import java.util.regex.*;
 
 public abstract class PasswordRequirements extends AbstractPassword {
+	protected int minPasswordLength;
+	
 	public abstract String createPassword();
 
 	

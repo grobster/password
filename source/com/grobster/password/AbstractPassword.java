@@ -52,4 +52,8 @@ public abstract class AbstractPassword {
 		SPECIAL = special;
 	}
 	
+	public static void setAllChars(char[][] allChar) {
+		ALL_CHARS = allChar;
+	}
+	
 }

@@ -1,48 +1,25 @@
 package com.grobster.password;
 
-public class Password {
-	private int passwordLength;
+public class Password extends AbstractPassword {
 	private String password;
-	public static final char[] LOWER_LETTERS = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-	public static final char[] UPPER_LETTERS = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-	public static final char[] NUMBERS = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-	public static final char[] SPECIAL = {'`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', '\\', '|', ';', ':', '\'', '"', ',', '<', '.', '>', '/', '?'};
-	public static final char[][] ALL_CHARS = {LOWER_LETTERS, UPPER_LETTERS, NUMBERS, SPECIAL};
 	
 	public Password(int passwordLength) {
-		if (passwordLength > 0) {
-			this.passwordLength = passwordLength;
-		}
+		super(passwordLength);
 	}
 	
-	public Password() {}
-	
+	public Password() {
+		super();
+	}
 	
 	public String createPassword() {
 		StringBuilder createdPassword = new StringBuilder();
-		for (int i = 0; i < passwordLength; i++) {
+		for (int i = 0; i < getPasswordLength(); i++) {
 			int randomArrayNumber = (int) (Math.random() * ALL_CHARS.length);
 			char[] randomArray = ALL_CHARS[randomArrayNumber];
 			int randomCharNumber = (int) (Math.random() * randomArray.length);
 			char randomChar = randomArray[randomCharNumber];
 			createdPassword.append(randomChar);
 		}
-		password = createdPassword.toString();
-		return password;
-	}
-	
-	public void setPasswordLength(int passwordLength) {
-		if (passwordLength > 0) {
-			this.passwordLength = passwordLength;
-		}
-	}
-	
-	public int getPasswordLength() {
-		return passwordLength;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
+		return password = createdPassword.toString();
+	}	
 }

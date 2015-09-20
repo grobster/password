@@ -1,7 +1,6 @@
 package com.grobster.password;
 
 public class Password extends AbstractPassword {
-	private String password;
 	
 	public Password(int passwordLength) {
 		super(passwordLength);
@@ -20,6 +19,7 @@ public class Password extends AbstractPassword {
 			char randomChar = randomArray[randomCharNumber];
 			createdPassword.append(randomChar);
 		}
-		return password = createdPassword.toString();
+		setPassword(createdPassword.toString());
+		return getPassword();
 	}	
 }

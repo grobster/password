@@ -14,7 +14,7 @@ public class PlmCharactersPassword extends PasswordRequirements {
 		password.createPassword();
 		System.out.println("before check password: " + password.getPassword());
 
-		if (firstCharacterHasExcludedCharacter(password.getPassword()) && minPasswordLength <= password.getPassword().length()) {
+		if (!firstCharacterHasExcludedCharacter(password.getPassword()) && password.getPassword().length() >= minPasswordLength  ) {
 			System.out.println("created password did not meet requirements.  Creating another one");
 			createPassword();
 		} 

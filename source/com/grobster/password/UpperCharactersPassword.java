@@ -1,11 +1,11 @@
 package com.grobster.password;
 
-public class LowerCharactersPassword extends PasswordRequirements {
+public class UpperCharactersPassword extends PasswordRequirements {
 	private AbstractPassword password;
 	
-	public LowerCharactersPassword(AbstractPassword password) {
+	public UpperCharactersPassword(AbstractPassword password) {
 		this.password = password;
-		setAllChars(new char[][]{LOWER_LETTERS});
+		setAllChars(new char[][]{UPPER_LETTERS});
 	}
 	
 	public String createPassword() {

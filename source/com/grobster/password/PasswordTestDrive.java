@@ -17,6 +17,14 @@ public class PasswordTestDrive {
 		password9.createPassword();
 		System.out.println(password9.getPassword());
 		
+		System.out.println("++++++++++++++++++++++++++++++++++++");
+		
+		AbstractPassword password25 = new Password(12);
+		password25 = new UpperCharactersPassword(password25);
+		password25.createPassword();
+		
+		System.out.println(password25.getPassword());
+		
 	}
 	
 }

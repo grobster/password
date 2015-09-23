@@ -4,7 +4,7 @@ public class PasswordTestDrive {
 	public static void main(String[] args) {
 		
 		AbstractPassword password3 = new PlmCharactersPassword(new AllCharactersPassword(new Password(8)));
-		password3.setPasswordLength(4);
+		password3.setPasswordLength(8);
 		
 		password3.createPassword();
 		
@@ -24,6 +24,14 @@ public class PasswordTestDrive {
 		password25.createPassword();
 		
 		System.out.println(password25.getPassword());
+		
+		
+		System.out.println("++++++++++++++++++++++++++++++++++++");
+		AbstractPassword password7 = new Password(10);
+		password7 = new NumberCharactersPassword(password7);
+		password7.createPassword();
+		
+		System.out.println(password7.getPassword());
 		
 	}
 	
